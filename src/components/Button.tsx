@@ -1,11 +1,12 @@
-interface Props {
-    text: string
-}
+import { ComponentProps, ReactNode } from "react"
 
-export const Button = (props: Props) => {
+interface ButtonProps extends ComponentProps<'button'> {}
+
+export const Button = (props: ButtonProps) => {
     return (
-        <button className="bg-violet-500 text-white px-5 py-2 rounded-2xl">
-            {props.text || 'Enviar'}
-        </button>
+        <button 
+            className="flex justify-between items-center px-5 h-12 bg-gray-500 text-blue font-semibold rounded-xl w-full cursor-pointer transition-colors duration-300 hover:bg-blue hover:text-gray-900"
+            {...props}
+        />
     )
 }
